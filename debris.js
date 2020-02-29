@@ -23,11 +23,7 @@ function preload() {
 
 function setup(){
     let canvas= createCanvas(windowWidth,windowHeight,WEBGL);
-    //textureMode(IMAGE);
-    //textureWrap(MIRROR);
-
-
-   //ortho(-width, width, height, -height/2, 0.1, 100);
+ 
   }
 
 
@@ -227,7 +223,29 @@ pop();
 //debris
 push();
 scale(5);
+ translate(-200,0,500);
+ rotateY(30);
+model(coral);
+pop();
+
+//debris
+push();
+scale(5);
  translate(300,0,150);
+ rotateY(30);
+model(coral);
+pop();
+//debris
+push();
+scale(5);
+ translate(500,0,50);
+ rotateY(30);
+model(coral);
+pop();
+//debris
+push();
+scale(5);
+ translate(500,0,150);
  rotateY(30);
 model(coral);
 pop();
@@ -237,21 +255,24 @@ pop();
 push();
 specularMaterial(174,151,115);
 scale(0.3);
+translate(0,-100,0);
 model(tire);
+
+
 pop();
 
 //apple
 push();
 specularMaterial(30,0,0);
-translate(-50,0,300);
-scale(0.2);
+translate(-50,-20,300);
+scale(0.1);
 model(apple);
 pop();
 
 //can
 push();
 specularMaterial(50);
-translate(100,0,-200);
+translate(100,-10,-200);
 scale(0.2);
 rotateX(30);
 model(can);
@@ -260,12 +281,54 @@ pop();
 //cola
 push();
 specularMaterial(0,20,0);
-translate(-100,0,-200);
+translate(-100,-10,-200);
 scale(0.3);
 rotateX(80);
 model(cocacola);
 pop();
 
+for(i=1; i<7; i++){
+//cola
+push();
+specularMaterial(0,20,0);
+translate(-800*i,-10,-200);
+scale(0.3);
+rotateX(80*i);
+model(cocacola);
+pop();
+
+push();
+specularMaterial(0,20,0);
+translate(800*i,-10,200*i);
+scale(0.3);
+rotateX(80*i);
+model(cocacola);
+pop();
+
+push();
+specularMaterial(0,20,0);
+translate(-500*i,-10,200*i);
+scale(0.3);
+rotateX(80*i);
+model(cocacola);
+pop();
+push();
+specularMaterial(0,20,0);
+translate(500*i,-10,-200*i);
+scale(0.3);
+rotateX(80*i);
+model(cocacola);
+pop();
+
+//can
+push();
+specularMaterial(50);
+translate(-200*i,-10,500*i);
+scale(0.2);
+rotateX(30);
+model(can);
+pop();
+}
 ////////////////////sakoula
 push();
 specularMaterial(10);
@@ -418,7 +481,7 @@ rotateX(-40);
 model(bag);
 pop();
 
-for(i=0; i<7; i++){
+for(i=1; i<7; i++){
 //grass
 push();
 specularMaterial(0,20,0);
@@ -526,9 +589,10 @@ rotateX(270);
 rotateX(sin(frameCount*0.8) * 10);
 model(grass);
 pop();
+
 }
 
-  }
+} 
 
 
   function mousePressed(){
@@ -537,4 +601,5 @@ pop();
     mySound.setVolume(0.4);
     mySound.loop();
   }
+
   }
