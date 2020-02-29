@@ -257,8 +257,6 @@ specularMaterial(174,151,115);
 scale(0.3);
 translate(0,-100,0);
 model(tire);
-
-
 pop();
 
 //apple
