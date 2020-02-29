@@ -3,6 +3,8 @@ let coral;
 let bubbles=[];
 let bubble
 let peach;
+let j=0;
+let mySound;
 
 function preload() {
     // Load model with normalise parameter set to true
@@ -15,6 +17,8 @@ function preload() {
   grass=loadModel('grass1.obj', true);
     glitter = loadImage('concretedark.jpg');
     console.log('loaded')
+    soundFormats('mp3', 'ogg');
+    mySound = loadSound('syntrimia sthn kardia mou.mp3');
   }
 
 function setup(){
@@ -524,13 +528,13 @@ model(grass);
 pop();
 }
 
-
-
-
-
-
-
   }
 
 
-  
+  function mousePressed(){
+    j=j+1;
+    if (j<2){
+    mySound.setVolume(0.4);
+    mySound.loop();
+  }
+  }
