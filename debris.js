@@ -602,3 +602,7 @@ pop();
 
   }
 
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+
